@@ -281,6 +281,7 @@ class TestQueryResult < MiniTest::Test
     person = Temp::Person.new(@client.query(Temp::Query).data.me)
     raw_result = {"firstName"=>"Joshua", "lastName"=>"Peek"}
     assert_equal raw_result, person.to_h
+    assert_equal raw_result, person.to_hash
 
     assert_equal "Joshua", person.first_name
     assert_equal "Peek", person.last_name
